@@ -1,0 +1,21 @@
+<template name="homepage">
+    {{#if isReady}}
+        {{#each posts}}
+            <div class="row">
+                <div class="col-md-7">
+                    <a href="#">
+                        <img class="img-responsive" src="{{image}}" alt="">
+                    </a>
+                </div>
+                <div class="col-md-5">
+                    <h3>{{title}}</h3>
+                    <h4>{{subheading}}</h4>
+                    <p>{{{body}}}</p>
+                    <a class="btn btn-primary" href="{{pathFor 'post' _id}}">View post <span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+            </div>
+        {{/each}}
+    {{else}}
+        <h3>Loading...</h3>
+    {{/if}}
+</template>
